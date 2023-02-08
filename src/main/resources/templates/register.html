@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/fragment::head">
+
+
+</head>
+<body>
+    <header th:replace="fragments/fragment::nav">
+
+    </header>
+    <main>
+      <section>
+          <h3>Register</h3>
+            <form th:action="@{/users/register}" th:method="POST" th:object="${userModel}" id="register" class="input-group-register">
+                <input th:field="*{username}" th:errorclass="bg-danger"
+                       type="text" class="input-field" placeholder="Username">
+                <small th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
+                       class="text-danger">Incorrect username!</small>
+                <input th:field="*{fullName}" th:errorclass="bg-danger" type="text" class="input-field" placeholder="Full Name">
+                <small th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"
+                       class="text-danger">Incorrect fullName!</small>
+                <input th:field="*{email}" th:errorclass="bg-danger" type="email" class="input-field" placeholder="Email">
+                <small th:if="${#fields.hasErrors('email')} " th:errors="*{email}"
+                       class="text-danger">Incorrect email!</small>
+                <input th:field="*{password}" th:errorclass="bg-danger" type="password" class="input-field" placeholder="Password">
+                <small th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                       class="text-danger">Incorrect password!</small>
+                <input th:field="*{confirmPassword}" th:errorclass="bg-danger" type="password" class="input-field" placeholder="Confirm Password">
+                <small th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"
+                       class="text-danger">Incorrect username!</small>
+                <button type="submit" class="submit-btn" value="Register">Register</button>
+            </form>
+        </section>
+    </main>
+    <footer th:replace="fragments/fragment::footer">
+
+    </footer>
+</body>
+</html>

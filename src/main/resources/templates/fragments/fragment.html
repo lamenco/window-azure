@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PVC</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+</head>
+
+
+<body>
+<header th:fragment="nav">
+    <nav>
+        <p>Window <i class="fa-brands fa-windows"></i> Shopper</p>
+        <ul>
+            <li id="window"><a href="/">Home</a></li>
+            <li ><a href="/products">Products</a></li>
+
+
+            <th:block sec:authorize="isAuthenticated()">
+                <li><a href="/offer/calculate">Calculator</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a th:href="@{/cart}"><i class="fa-sharp fa-solid fa-cart-shopping"></i>Cart</a></li>
+                <li>
+                    <form th:action="@{/users/logout}" th:method="post">
+                        <button type="submit" class="logout-btn">Logout</button>
+                    </form>
+                </li>
+            </th:block>
+            <th:block sec:authorize="!isAuthenticated()">
+                <li><a href="/users/login">Login</a></li>
+                <li><a href="/users/register">Register</a></li>
+                <li><a href="#">About Us</a></li>
+            </th:block>
+
+
+        </ul>
+    </nav>
+</header>
+<footer th:fragment="footer">
+    <p>Copyright 2023. All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/fragment::head">
+
+
+</head>
+<body>
+    <header th:replace="fragments/fragment::nav">
+
+    </header>
+    <main  class="my-cart">
+
+        <div class="cart2">
+            <h2 >Windows</h2>
+            <div class="cart">
+            <div  th:each="w : ${windows}" class="cart-row">
+                <img height="95px" width="150px" th:src="*{w.image}" alt="">
+                <div>Height:
+                    <p th:text="*{w.height}"></p>
+                </div>
+                <div>Width:
+                    <p th:text="*{w.width}"></p>
+                </div>
+                <div>Price:
+                    <p th:text="*{w.price}"></p>
+                </div>
+
+                <button class="edit-btn" type="submit"><a th:href="@{offer/update/{id}(id=*{w.id})}" >Edit </a></button>
+                <button  class="edit-btn" type="submit"><a th:href="@{cart/delete/{id}(id=*{w.id})}">Delete</a></button>
+                <button class="edit-btn" type="submit">Details</button>
+            </div>
+            <div class="totalPrice">Total Price:
+                <p th:text="${windowsPrice}"></p>
+            </div>
+
+        </div>
+        </div>
+
+        <div class="cart2">
+            <h2 id="h2">Doors</h2>
+            <div class="cart">
+            <div th:each="d : ${doors}" class="cart-row">
+
+                <img height="95px" width="150px" th:src="*{d.image}" alt="">
+
+                <div>Height:
+                    <p th:text="*{d.height}"></p>
+                </div>
+                <div>Width:
+                    <p th:text="*{d.width}"></p>
+                </div>
+                <div id="price">Price:
+                    <p th:text="*{d.price}"></p>
+                </div>
+                <button class="edit-btn" type="submit" th:href="@{cart/update/{id}(id=*{d.id})}">Edit</button>
+                <button  class="edit-btn" type="submit"><a th:href="@{cart/delete/{id}(id=*{d.id})}">Delete</a></button>
+                <button class="edit-btn" type="submit">Details</button>
+            </div>
+            <div class="totalPrice">Total Price:
+                <p th:text="${doorPrice}"></p>
+            </div>
+        </div></div>
+
+
+    </main>
+    <footer th:replace="fragments/fragment::footer">
+
+    </footer>
+</body>
+</html>

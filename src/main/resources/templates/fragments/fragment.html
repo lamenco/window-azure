@@ -24,7 +24,6 @@
 
             <th:block sec:authorize="isAuthenticated()">
                 <li><a href="/offer/calculate">Calculator</a></li>
-                <li><a href="#">Search</a></li>
                 <li><a th:href="@{/cart}"><i class="fa-sharp fa-solid fa-cart-shopping"></i>Cart</a></li>
                 <li>
                     <form th:action="@{/users/logout}" th:method="post">
@@ -33,12 +32,23 @@
                 </li>
             </th:block>
             <th:block sec:authorize="!isAuthenticated()">
-                <li><a href="/users/login">Login</a></li>
-                <li><a href="/users/register">Register</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a th:text="#{fragment_login}" href="/users/login">Login</a></li>
+                <li><a th:text="#{fragment_register}" href="/users/register">Register</a></li>
             </th:block>
-
-
+            <th:block>
+            <li>
+                <form th:method="GET">
+                    <label  th:value="#{fragment_language}" for="lang"></label>
+                    <select
+                            onchange="this.form.submit()"
+                            id="lang"
+                            name="lang">
+                        <option value="en_US" th:selected="${#locale.toString()} == 'en_US'">English</option>
+                        <option value="bg_BG" th:selected="${#locale.toString()} == 'bg_BG'">Български</option>
+                    </select>
+                </form>
+            </li>
+            </th:block>
         </ul>
     </nav>
 </header>

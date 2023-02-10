@@ -59,7 +59,9 @@ public class CommentServiceImpl implements CommentService {
         return commentRepository.findAllByModelOrderByCreated("Kommerling")
                 .stream()
                 .map(comment -> {
-                    CommentViewModel commentViewModel = modelMapper.map(comment, CommentViewModel.class);
+                    CommentViewModel commentViewModel =new CommentViewModel();
+                    commentViewModel.setAuthorName(comment.getAuthor().getUsername());
+                    commentViewModel.setText(comment.getText());
                     return commentViewModel;
                 }).collect(Collectors.toList());
     }

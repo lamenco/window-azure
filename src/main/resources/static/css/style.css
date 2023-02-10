@@ -120,7 +120,7 @@ form small{
 }
 #login{
     width: 310px;
-    height: 170px;
+    height: 190px;
     vertical-align: auto;
     position: relative;
     margin: 2% auto;
@@ -282,6 +282,7 @@ form small{
 .cart-row div{
     padding-top: 25px;
     padding-right: 70px;
+    width: 70px;
 }
 #price{
     width: 70px;
@@ -303,13 +304,24 @@ form small{
     cursor: pointer;
 
 }
+.edit-btn input{
+    border: none;
+    background-color: transparent;
+    padding-left: 20px;
+    padding-top: 7px;
+    cursor: pointer;
+}
+
 
 .edit-btn a{
     text-decoration: none;
     color: black;
 }
 .totalPrice{
-    padding-left: 396px;
+    padding-left: 440px;
+}
+.totalPrice p{
+    padding-left: 10px;
 }
 
 #h2{
@@ -414,9 +426,45 @@ form small{
     margin-bottom: 0px;
     font-size: 20px;
 }
-.comment textarea{
+.comment li{
     margin-top: 0;
-    width: 700px;
     border: none;
     display: flex;
+    height: 70px;
+    width: 800px;
+    word-break: break-word;
+}
+
+.order-details{
+    width: 300px;
+    height: 450px;
+    border: black solid 2px;
+    margin-left: 320px;
+    background-color: rgb(61, 56, 56);
+    border-radius: 10px;
+}
+.order-details h3{
+    margin-left: 10px;
+    margin-bottom: 2px;
+    margin-top: 0px;
+    padding-top: 10px;
+    color: white;
+}
+.detailsSection h1{
+    padding-right: 440px;
+
+
+}
+.order-details p{
+    text-align: center;
+    margin-top: 0px;
+    font-size: 20px;
+    color: wheat;
+}
+.order-details div{
+    height: 70px;
+    border-bottom: dotted;
+}
+.order-details div:nth-child(6){
+    border-bottom: none
 }

@@ -3,14 +3,15 @@ package com.example.demo.models.view;
 public class CommentViewModel {
 
     private String authorName;
-    private String message;
+    private String text;
 
     public CommentViewModel() {
     }
 
-    public CommentViewModel(String authorName, String message) {
+
+    public CommentViewModel(String authorName, String text) {
         this.authorName = authorName;
-        this.message = message;
+        this.text = text;
     }
 
     public String getAuthorName() {
@@ -21,11 +22,11 @@ public class CommentViewModel {
         this.authorName = authorName;
     }
 
-    public String getMessage() {
-        return message;
+    public String getText() {
+        return text;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setText(String text) {
+        this.text = text;
     }
 }

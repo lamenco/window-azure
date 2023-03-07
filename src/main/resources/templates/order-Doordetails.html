@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/fragment::head">
+
+</head>
+<body>
+<header th:replace="fragments/fragment::nav">
+
+</header>
+<main>
+    <section class="detailsSection">
+        <h1>Details</h1>
+        <div th:object="${orderDoorDetails}" class="order-details">
+            <div>
+                <h3>Order <span>&#8470;</span></h3>
+                <p th:text="*{id}">2</p>
+            </div>
+            <div>
+                <h3>Model</h3>
+                <p th:text="*{model.getModel()}"></p>
+            </div>
+            <div>
+                <h3>Height</h3>
+                <p th:text="*{height} + cm"></p>
+            </div>
+            <div>
+                <h3>Width</h3>
+                <p th:text="*{width} + cm"></p>
+            </div>
+            <div>
+                <h3>Chamber</h3>
+                <p th:text="*{chamber.getChamber()}"></p>
+            </div>
+            <div>
+                <h3>Color</h3>
+                <p th:text="*{color.getColor()}"></p>
+            </div>
+        </div>
+    </section>
+</main>
+<footer th:replace="fragments/fragment::footer">
+
+</footer>
+</body>
+</html>

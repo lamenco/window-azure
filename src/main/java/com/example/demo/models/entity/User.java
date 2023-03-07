@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
-public class User extends BaseEntity{
+public class User extends BaseEntity {
 
     private String username;
     private String fullName;
@@ -19,44 +19,62 @@ public class User extends BaseEntity{
 
     public User() {
     }
-    @Column(nullable = false,unique = true)
+
+    public User(String username, String fullName, String email, String password, List<UserRole> userRole) {
+        this.username = username;
+        this.fullName = fullName;
+        this.email = email;
+        this.password = password;
+        this.userRole = userRole;
+    }
+
+    @Column(nullable = false, unique = true)
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
+    public User setUsername(String username) {
         this.username = username;
+        return this;
     }
+
     @Column(nullable = false)
     public String getFullName() {
         return fullName;
     }
 
-    public void setFullName(String fullName) {
+    public User setFullName(String fullName) {
         this.fullName = fullName;
+        return this;
     }
-    @Column(nullable = false,unique = true)
+
+    @Column(nullable = false, unique = true)
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public User setEmail(String email) {
         this.email = email;
+        return this;
     }
+
     @Column(nullable = false)
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public User setPassword(String password) {
         this.password = password;
+        return this;
     }
+
     @ManyToMany(fetch = FetchType.EAGER)
     public List<UserRole> getUserRole() {
         return userRole;
     }
 
-    public void setUserRole(List<UserRole> userRole) {
+    public User setUserRole(List<UserRole> userRole) {
         this.userRole = userRole;
+        return this;
     }
 }

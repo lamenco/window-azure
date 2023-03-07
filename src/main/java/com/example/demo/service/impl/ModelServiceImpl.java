@@ -31,7 +31,9 @@ public class ModelServiceImpl implements ModelService {
     }
 
     @Override
-    public String findByModel(String model) {
-        return modelRepository.findByModel(model);
+    public Model findByModel(ModelEnum model) {
+        return modelRepository.findByModel(model).orElse(null);
     }
+
+
 }

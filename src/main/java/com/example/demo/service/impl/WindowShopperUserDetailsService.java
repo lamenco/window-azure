@@ -27,12 +27,11 @@ public class   WindowShopperUserDetailsService implements UserDetailsService {
     }
 
     private UserDetails map(User user) {
-        return new WindowShopperUserDetails(user.getPassword(), user.getUsername(), user.getFullName()
+        return new WindowShopperUserDetails(user.getId(),user.getPassword(), user.getUsername(), user.getFullName()
                 , user.getUserRole().stream().map(this::map).toList());
     }
 
     private GrantedAuthority map(UserRole userRole) {
         return new SimpleGrantedAuthority("ROLE_" + userRole.getUserRole().name());
-
     }
 }

@@ -6,22 +6,24 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 
 public class WindowShopperUserDetails implements UserDetails {
+    private final Long id;
 
     private final String password;
     private final String username;
     private final String fullName;
     private final Collection<GrantedAuthority> authorities;
 
-    public WindowShopperUserDetails(String password, String username, String fullName
-    , Collection<GrantedAuthority> authorities) {
+    public WindowShopperUserDetails(Long id, String password, String username, String fullName
+            , Collection<GrantedAuthority> authorities) {
+        this.id = id;
         this.password = password;
         this.username = username;
         this.fullName = fullName;
         this.authorities = authorities;
     }
 
-    public String getFullName(){
-        return  fullName;
+    public String getFullName() {
+        return fullName;
     }
 
     @Override

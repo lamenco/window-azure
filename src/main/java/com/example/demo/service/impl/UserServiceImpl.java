@@ -16,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -39,7 +40,17 @@ public class UserServiceImpl implements UserService {
     public void register(UserRegisterDto userRegisterDto) {
         User newUser = modelMapper.map(userRegisterDto, User.class);
         newUser.setPassword(passwordEncoder.encode(userRegisterDto.getPassword()));
-        List<UserRole> userRoles = new ArrayList<>();
+//        List<UserRole> userRoles = new ArrayList<>();
+//        UserRole userRole = new UserRole();
+//        if(newUser.getUsername().equals("lambo")){
+//           userRole.setUserRole(UserRoleEnum.ADMIN);
+//           userRoles.add(userRole);
+//        }else{
+//            userRole.setUserRole(UserRoleEnum.USER);
+//            userRoles.add(userRole);
+//        }
+//        newUser.setUserRole(userRoles);
+
         this.userRepository.save(newUser);
     }
 
@@ -58,5 +69,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByUsername(String username) {
         return userRepository.findByUsername(username).orElse(null);
+    }
+
+    @Override
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email).orElse(null);
     }
 }

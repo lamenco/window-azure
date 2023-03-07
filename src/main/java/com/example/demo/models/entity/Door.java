@@ -12,9 +12,21 @@ public class Door extends BaseEntity{
     private Colors color;
     private Chambers chamber;
     private BigDecimal price;
-    private String model;
+    private Model model;
 
+    public Door() {
+    }
 
+    public Door(double height, double width, Material material, Colors color, Chambers chamber, BigDecimal price, Model model, User user) {
+        this.height = height;
+        this.width = width;
+        this.material = material;
+        this.color = color;
+        this.chamber = chamber;
+        this.price = price;
+        this.model = model;
+        this.user = user;
+    }
 
     private User user;
 
@@ -22,48 +34,54 @@ public class Door extends BaseEntity{
         return height;
     }
 
-    public void setHeight(double height) {
+    public Door setHeight(double height) {
         this.height = height;
+        return  this;
     }
 
     public double getWidth() {
         return width;
     }
 
-    public void setWidth(double width) {
+    public Door setWidth(double width) {
         this.width = width;
+        return  this;
     }
-    @ManyToOne()
+    @ManyToOne
     public Material getMaterial() {
         return material;
     }
 
-    public void setMaterial(Material material) {
+    public Door setMaterial(Material material) {
         this.material = material;
+        return  this;
     }
-    @ManyToOne()
+    @ManyToOne
     public Colors getColor() {
         return color;
     }
 
-    public void setColor(Colors color) {
+    public Door setColor(Colors color) {
         this.color = color;
+        return  this;
     }
-    @ManyToOne()
+    @ManyToOne
     public Chambers getChamber() {
         return chamber;
     }
 
-    public void setChamber(Chambers chamber) {
+    public Door setChamber(Chambers chamber) {
         this.chamber = chamber;
+        return  this;
     }
     @Column(nullable = false)
     public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public Door setPrice(BigDecimal price) {
         this.price = price;
+        return  this;
     }
 
     @ManyToOne
@@ -71,15 +89,17 @@ public class Door extends BaseEntity{
         return user;
     }
 
-    public void setUser(User user) {
+    public Door setUser(User user) {
         this.user = user;
+        return  this;
     }
-
-    public String getModel() {
+    @ManyToOne
+    public Model getModel() {
         return model;
     }
 
-    public void setModel(String model) {
+    public Door setModel(Model model) {
         this.model = model;
+        return  this;
     }
 }

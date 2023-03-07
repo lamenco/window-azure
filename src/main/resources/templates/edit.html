@@ -15,7 +15,7 @@
           th:method="PATCH"
           th:object="${window}"   id="window-register" >
       <label>Height:</label><br>
-      <input th:errorclass="bg-danger"
+      <input  th:errorclass="bg-danger"
              name="height" type="text" class="input-field" th:placeholder="*{height}">
       <small th:if="${#fields.hasErrors('height')}" th:errors="*{height}"
              class="text-danger">Incorrect height!</small>

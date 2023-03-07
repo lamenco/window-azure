@@ -1,7 +1,8 @@
-body{
+body {
     margin: 0;
 }
-body nav{
+
+body nav {
     background-color: cornflowerblue;
     margin: 0px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -9,12 +10,13 @@ body nav{
     padding: 1rem;
 }
 
-nav ul li{
-    display: inline-block; 
+nav ul li {
+    display: inline-block;
     padding: 0 10px;
-    padding-top:  0px;
+    padding-top: 0px;
 }
-nav ul li p{
+
+nav ul li p {
     color: white;
     margin: 0;
     font-size: 20px;
@@ -22,18 +24,19 @@ nav ul li p{
 }
 
 
-nav ul li a{
+nav ul li a {
     color: aliceblue;
     text-decoration: none;
     font-size: 20px;
 }
 
-#logout{
+#logout {
     color: aliceblue;
     text-decoration: none;
     font-size: 20px;
 }
-nav > p{
+
+nav > p {
     float: left;
     color: black;
     font-size: 20px;
@@ -41,14 +44,14 @@ nav > p{
     margin-top: 0px;
 }
 
-nav ul{
+nav ul {
     vertical-align: middle;
     margin-top: 0;
     padding-bottom: 0px;
     margin-bottom: 0px;
 }
 
-main section{
+main section {
     background-image: url(/images/window-bay-view.jpg);
     margin-top: 0px;
     background-position: center;
@@ -59,53 +62,58 @@ main section{
 }
 
 
-main section h1{
+main section h1 {
     text-align: center;
     font-size: 30px;
     margin-left: 400px;
     margin-top: 0px;
 }
-main section h2{
+
+main section h2 {
     text-align: center;
     font-size: 30px;
     margin-left: 100px;
     margin-top: 0px;
     padding-bottom: 300px;
 }
-main section h3{
+
+main section h3 {
     text-align: center;
     font-size: 30px;
     padding-top: 80px;
-   background:transparent;
+    background: transparent;
 }
-footer{
+
+footer {
     background-color: cornflowerblue;
     margin: 0;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 0.5px;
     text-align: center;
     font-size: 20px;
 }
 
-#register{
-  width: 310px;
-  height: 300px;
-  vertical-align: auto;
-  position: relative;
-  margin: 2% auto;
-  padding: 30px;
+#register {
+    width: 310px;
+    height: 300px;
+    vertical-align: auto;
+    position: relative;
+    margin: 2% auto;
+    padding: 30px;
     padding-bottom: 80px;
-  overflow: hidden;
-      background: cornflowerblue;
+    overflow: hidden;
+    background: cornflowerblue;
     border-radius: 10px;
     border: solid;
 }
-form small{
+
+form small {
     background-color: black;
     color: red;
     border-radius: 20px;
 }
-#window-register{
+
+#window-register {
     width: 310px;
     height: 380px;
     vertical-align: auto;
@@ -118,7 +126,8 @@ form small{
     border-radius: 10px;
     border: solid;
 }
-#login{
+
+#login {
     width: 310px;
     height: 190px;
     vertical-align: auto;
@@ -126,12 +135,12 @@ form small{
     margin: 2% auto;
     padding: 30px;
     overflow: hidden;
-        background: cornflowerblue;
-      border-radius: 10px;
-      border: solid;
-  }
+    background: cornflowerblue;
+    border-radius: 10px;
+    border: solid;
+}
 
-.input-field{
+.input-field {
     width: 100%;
     padding: 10px 0;
     margin: 5px 0;
@@ -141,7 +150,8 @@ form small{
     border-bottom: 1px solid #999;
     outline: none;
 }
-.submit-btn{
+
+.submit-btn {
     width: 85%;
     padding: 10px 30px;
     cursor: pointer;
@@ -152,11 +162,12 @@ form small{
     margin-top: 15px;
     border-radius: 30px;
 }
-.logout-btn{
+
+.logout-btn {
 
 }
 
-.window{
+.window {
     background-image: url(/images/window.jpg);
     width: 200px;
     height: 300px;
@@ -168,6 +179,7 @@ form small{
     padding-top: 20px;
     padding-bottom: 200px;
 }
+
 .window a {
     border-radius: 50px;
     background: transparent;
@@ -176,15 +188,18 @@ form small{
     margin-top: 279px;
     margin-left: 55px;
 }
-.window button:hover{
+
+.window button:hover {
     background: black;
     color: white;
 }
-.door button:hover{
+
+.door button:hover {
     background: black;
     color: white;
 }
-.door button{
+
+.door button {
     border-radius: 50px;
     background: transparent;
     cursor: pointer;
@@ -192,7 +207,8 @@ form small{
     margin-left: 61px;
     font-size: xx-large;
 }
-.door{
+
+.door {
     background-image: url(/images/door.jpg);
     width: 200px;
     height: 300px;
@@ -203,24 +219,29 @@ form small{
     padding-top: 20px;
     padding-bottom: 200px;
 }
-.choose{
+
+.choose {
     display: inline-flex;
 }
-.window-form{
+
+.window-form {
     width: 200px;
     height: 500px;
     margin-left: 550px;
 }
-.selector{
+
+.selector {
     border-radius: 20px;
     font-size: larger;
     text-align: center;
     min-inline-size: -webkit-fill-available;
 }
-.window div{
+
+.window div {
     padding-top: 280px;
 }
-.window div a{
+
+.window div a {
     font-size: 35px;
     cursor: pointer;
     color: black;
@@ -228,11 +249,13 @@ form small{
     text-decoration: none;
     border: groove;
 }
-.window div a:hover{
+
+.window div a:hover {
     background-color: black;
     color: white;
 }
-.door div a{
+
+.door div a {
     border-radius: 20px;
     font-size: 35px;
     cursor: pointer;
@@ -241,15 +264,18 @@ form small{
     text-decoration: none;
     border: groove;
 }
-.door div a:hover{
+
+.door div a:hover {
     background-color: white;
     color: black;
 }
-.door div{
+
+.door div {
     padding-top: 280px;
     padding-left: 65px;
 }
-.logout-btn{
+
+.logout-btn {
     cursor: pointer;
     background-color: transparent;
     border-color: white;
@@ -257,42 +283,51 @@ form small{
     font-size: 20px;
 }
 
-.my-cart{
+.my-cart {
     border: 2px solid;
 }
-.my-cart h1:nth-child(1){
+
+.my-cart h1:nth-child(1) {
     margin-top: 10px;
 }
-.my-cart h1:nth-child(2){
+
+.my-cart h1:nth-child(2) {
     margin-top: 50px;
 }
-.cart{
+
+.cart {
     border-top: solid black 1px;
     width: 1100px;
 }
-.cart-row img{
+
+.cart-row img {
     /*height: 95px;*/
     /*width: 150px;*/
     margin-right: 25px;
 
 }
-.cart-row{
+
+.cart-row {
     display: flex;
 }
-.cart-row div{
+
+.cart-row div {
     padding-top: 25px;
     padding-right: 70px;
     width: 70px;
 }
-#price{
+
+#price {
     width: 70px;
 }
-.cart-row div button{
+
+.cart-row div button {
     padding-top: 25px;
     padding-left: 70px;
     margin-right: 100px;
 }
-.edit-btn{
+
+.edit-btn {
     width: 80px;
     height: 30px;
     margin-top: 35px;
@@ -304,7 +339,8 @@ form small{
     cursor: pointer;
 
 }
-.edit-btn input{
+
+.edit-btn input {
     border: none;
     background-color: transparent;
     padding-left: 20px;
@@ -313,42 +349,45 @@ form small{
 }
 
 
-.edit-btn a{
+.edit-btn a {
     text-decoration: none;
     color: black;
 }
-.totalPrice{
+
+.totalPrice {
     padding-left: 440px;
 }
-.totalPrice p{
+
+.totalPrice p {
     padding-left: 10px;
 }
 
-#h2{
+#h2 {
     padding-top: 45px;
 }
 
-.details{
+.details {
     display: flex;
     padding-left: 180px;
     border-radius: 10px;
 
 }
 
-.Kommerling{
+.Kommerling {
     background-image: url(/images/Kommerling.jpg);
     width: 500px;
-    height:500px;
+    height: 500px;
 
 
 }
-.VIVA{
+
+.VIVA {
     background-image: url(/images/Vivaplast.jpg);
     width: 500px;
-    height:500px;
+    height: 500px;
 }
 
-.details div div a{
+.details div div a {
     margin-top: 250px;
     border-radius: 10px;
     text-decoration: none;
@@ -358,61 +397,73 @@ form small{
     font-size: 25px;
     border: black solid 0.2px;
 }
-.details div div  a:hover{
+
+.details div div a:hover {
     background: black;
     color: white;
 }
-.details div div{
+
+.details div div {
     margin-top: 300px;
 }
-#commentForm{
+
+#commentForm {
     padding-left: 200px;
     padding-bottom: 20px;
 }
 
-#det{
+#det {
     background-color: white;
     background-image: none;
 }
 
-.details-add  div{
+.details-add div {
     width: 500px;
     height: 400px;
     margin-left: 220px;
     background-color: white;
 }
-.details-add  h3{
+
+.details-add h3 {
     padding-left: 600px;
 }
-#details-img img{
+
+#details-img img {
     width: 600px;
     height: 350px;
 
 }
-#details-img{
-    border:none;
+
+#details-img {
+    border: none;
 }
-.details-add div{
+
+.details-add div {
     display: flex;
     margin-left: 0px;
 }
-.details-add p{
+
+.details-add p {
     width: 900px;
     font-size: 19px;
 }
-.details-add div div:nth-child(2){
+
+.details-add div div:nth-child(2) {
     width: 800px;
 }
-.form-group2 input{
+
+.form-group2 input {
     background: cornflowerblue;
     border-color: white;
     border-radius: 5px;
 }
-.form-group2 textarea{
+
+.form-group2 textarea {
     width: 500px;
     background-color: white;
 }
-.comment{
+
+.comment {
     width: 800px;
     height: 100px;
     margin-left: 0;
@@ -421,12 +472,14 @@ form small{
     border-color: greenyellow;
     border-radius: 10px;
 }
-.comment h5{
+
+.comment h5 {
     margin-top: 5px;
     margin-bottom: 0px;
     font-size: 20px;
 }
-.comment li{
+
+.comment li {
     margin-top: 0;
     border: none;
     display: flex;
@@ -435,7 +488,7 @@ form small{
     word-break: break-word;
 }
 
-.order-details{
+.order-details {
     width: 300px;
     height: 450px;
     border: black solid 2px;
@@ -443,28 +496,49 @@ form small{
     background-color: rgb(61, 56, 56);
     border-radius: 10px;
 }
-.order-details h3{
+
+.order-details h3 {
     margin-left: 10px;
     margin-bottom: 2px;
     margin-top: 0px;
     padding-top: 10px;
     color: white;
 }
-.detailsSection h1{
+
+.detailsSection h1 {
     padding-right: 440px;
 
 
 }
-.order-details p{
+
+.order-details p {
     text-align: center;
     margin-top: 0px;
     font-size: 20px;
     color: wheat;
 }
-.order-details div{
+
+.order-details div {
     height: 70px;
     border-bottom: dotted;
 }
-.order-details div:nth-child(6){
+
+.order-details div:nth-child(6) {
     border-bottom: none
+}
+
+#commentCtnr div h4 {
+    margin-bottom: 5px;
+}
+#commentCtnr div  {
+   border-bottom: 1px;
+}
+#commentCtnr div textarea {
+    border: none;
+    width: 1000px;
+    background-color: cornflowerblue;
+    border-radius: 5px;
+    height: 50px;
+    resize: none;
+
 }

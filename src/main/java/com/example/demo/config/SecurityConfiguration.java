@@ -43,7 +43,7 @@ public class SecurityConfiguration {
                 // everyone can login and register
                         antMatchers("/").permitAll().
                         antMatchers( "/users/login", "/users/register").anonymous().
-                        antMatchers( "offer/door/add","offer/window/add").authenticated().
+                        antMatchers( "offer/door/add","offer/window/add","/api/**").authenticated().
 
                 // all other pages are available for logger in users
                         anyRequest().

@@ -73,17 +73,15 @@ public class CartController {
     }
 
 
-    @PreAuthorize("@offerService.isOwner(#principal.name,#id)")
+
     @DeleteMapping("/cart/deleteWindow/{id}")
-    public String deleteOffer(Principal principal, @PathVariable Long id){
+    public String deleteOffer( @PathVariable Long id){
         offerService.deleteWindowById(id);
         return "redirect:/cart";
     }
     @DeleteMapping("/cart/deleteDoor/{id}")
     public String removeDoorById(@PathVariable Long id){
         offerService.deleteDoorById(id);
-        ;
-
         return "redirect:/cart";
     }
 }

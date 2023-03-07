@@ -4,6 +4,8 @@
 >
 <head th:fragment="head">
     <meta charset="UTF-8">
+    <meta name="_csrf" th:content="${_csrf.token}">
+    <meta name="_csrf_header" th:content="${_csrf.headerName}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PVC</title>
@@ -18,6 +20,9 @@
     <nav>
         <p>Window <i class="fa-brands fa-windows"></i> Shopper</p>
         <ul>
+            <th:block >
+                <li sec:authorize="hasRole('ADMIN')"><a href="/offer/calculate">Admin</a></li>
+            </th:block>
             <li id="window"><a href="/">Home</a></li>
             <li ><a href="/products">Products</a></li>
 
@@ -32,13 +37,13 @@
                 </li>
             </th:block>
             <th:block sec:authorize="!isAuthenticated()">
-                <li><a th:text="#{fragment_login}" href="/users/login">Login</a></li>
-                <li><a th:text="#{fragment_register}" href="/users/register">Register</a></li>
+                <li><a th:text="#{navbar_login}" href="/users/login">Login</a></li>
+                <li><a th:text="#{navbar_register}" href="/users/register">Register</a></li>
             </th:block>
             <th:block>
             <li>
                 <form th:method="GET">
-                    <label  th:value="#{fragment_language}" for="lang"></label>
+                    <label class="text-white" th:text="#{navbar_language}" for="lang"></label>
                     <select
                             onchange="this.form.submit()"
                             id="lang"

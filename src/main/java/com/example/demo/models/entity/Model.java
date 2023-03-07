@@ -15,6 +15,12 @@ public class Model extends BaseEntity{
 
     public Model() {
     }
+
+
+    public Model(ModelEnum model) {
+        this.model = model;
+    }
+
     @Enumerated(EnumType.STRING)
     public ModelEnum getModel() {
         return model;

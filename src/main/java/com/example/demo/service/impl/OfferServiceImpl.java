@@ -28,8 +28,9 @@ public class OfferServiceImpl implements OfferService {
     private final MaterialService materialService;
     private final UserService userService;
     private final UserRepository userRepository;
+    private final ModelService modelService;
 
-    public OfferServiceImpl(ModelMapper modelMapper, WindowOfferRepository windowOfferRepository, DoorOfferRepository doorOfferRepository, ChamberService chamberService, ColorService colorService, MaterialService materialService, UserService userService, UserRepository userRepository) {
+    public OfferServiceImpl(ModelMapper modelMapper, WindowOfferRepository windowOfferRepository, DoorOfferRepository doorOfferRepository, ChamberService chamberService, ColorService colorService, MaterialService materialService, UserService userService, UserRepository userRepository, ModelService modelService) {
         this.modelMapper = modelMapper;
         this.windowOfferRepository = windowOfferRepository;
         this.doorOfferRepository = doorOfferRepository;
@@ -38,6 +39,7 @@ public class OfferServiceImpl implements OfferService {
         this.materialService = materialService;
         this.userService = userService;
         this.userRepository = userRepository;
+        this.modelService = modelService;
     }
 
     @Override
@@ -46,6 +48,7 @@ public class OfferServiceImpl implements OfferService {
         window.setColor(colorService.findByColor(windowOfferDto.getColor()));
         window.setChamber(chamberService.findByChamber(windowOfferDto.getChamber()));
         window.setUser(userService.findByUsername(userDetails.getUsername()));
+        window.setModel(modelService.findByModel(windowOfferDto.getModel()));
         double calculatePrice = windowOfferDto.getHeight() * windowOfferDto.getWidth();
         if (windowOfferDto.getChamber().name().equals("FIVE_CHAMBER")) {
             calculatePrice *= 1.1;
@@ -69,6 +72,7 @@ public class OfferServiceImpl implements OfferService {
         door.setMaterial(materialService.findByMaterial(doorOfferDto.getMaterial()));
         door.setChamber(chamberService.findByChamber(doorOfferDto.getChamber()));
         door.setUser(userService.findByUsername(userDetails.getUsername()));
+        door.setModel(modelService.findByModel(doorOfferDto.getModel()));
         double calculatePrice = doorOfferDto.getHeight() * doorOfferDto.getWidth();
         if (doorOfferDto.getChamber().name().equals("FIVE_CHAMBER")) {
             calculatePrice *= 1.1;
@@ -85,7 +89,7 @@ public class OfferServiceImpl implements OfferService {
         } else {
             calculatePrice *= 1.1;
         }
-        BigDecimal price = new BigDecimal(calculatePrice).setScale(2, RoundingMode.DOWN);
+        BigDecimal price = new BigDecimal(calculatePrice).setScale(2, RoundingMode.HALF_UP);
         door.setPrice(price);
         doorOfferRepository.save(door);
     }

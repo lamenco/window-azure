@@ -2,6 +2,7 @@ package com.example.demo.models.view;
 
 import com.example.demo.models.enums.ColorsEnum;
 import com.example.demo.models.enums.MaterialEnum;
+import com.example.demo.models.enums.ModelEnum;
 
 import java.math.BigDecimal;
 
@@ -14,6 +15,7 @@ public class DoorViewModel {
     private ColorsEnum color;
     private String image;
     private BigDecimal price;
+    private ModelEnum model;
 
     public Long getId() {
         return id;
@@ -69,5 +71,13 @@ public class DoorViewModel {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public ModelEnum getModel() {
+        return model;
+    }
+
+    public void setModel(ModelEnum model) {
+        this.model = model;
     }
 }

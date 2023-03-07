@@ -11,14 +11,16 @@ public class UserRole extends BaseEntity{
     UserRoleEnum userRole;
 
     public UserRole() {
-
     }
+
+
     @Enumerated(EnumType.STRING)
     public UserRoleEnum getUserRole() {
         return userRole;
     }
 
-    public void setUserRole(UserRoleEnum userRole) {
+    public UserRole setUserRole(UserRoleEnum userRole) {
         this.userRole = userRole;
+        return this;
     }
 }

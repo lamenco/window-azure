@@ -14,6 +14,8 @@ public class CommentViewModel {
         this.text = text;
     }
 
+
+
     public String getAuthorName() {
         return authorName;
     }

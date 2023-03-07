@@ -11,4 +11,6 @@ public interface UserService {
     void login(String username);
 
     User findByUsername(String username);
+
+    User findByEmail(String value);
 }

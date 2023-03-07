@@ -11,6 +11,11 @@ public class Chambers extends BaseEntity{
 
     public Chambers() {
     }
+
+    public Chambers(ChamberEnum chamber) {
+        this.chamber = chamber;
+    }
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     public ChamberEnum getChamber() {

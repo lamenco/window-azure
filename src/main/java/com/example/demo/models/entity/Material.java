@@ -16,6 +16,13 @@ public class Material extends BaseEntity{
         return material;
     }
 
+    public Material(MaterialEnum material) {
+        this.material = material;
+    }
+
+    public Material() {
+    }
+
     public void setMaterial(MaterialEnum material) {
         this.material = material;
     }

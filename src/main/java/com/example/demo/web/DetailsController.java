@@ -30,18 +30,12 @@ public class DetailsController {
 
     @GetMapping("/products/Kommerling")
     private String detailsKommerling(Model model){
-        model.addAttribute("commentCreationtDto",new CommentCreationtDto());
-        model.addAttribute("kommerling",commentService.gettAllComents());
         return "details-Kommerling";
     }
-
-    @PostMapping("/products/Kommerling")
-    public String comment(@Valid CommentCreationtDto commentCreationtDto,
-                          @AuthenticationPrincipal UserDetails userDetails){
-
-        commentService.add(commentCreationtDto,userDetails.getUsername());
-
-        return "details-Kommerling";
+    @GetMapping("/products/VIVA")
+    private String detailsVIVA(Model model){
+        model.addAttribute("commentCreationtDto",new CommentCreationtDto());
+        return "details-VIVA";
     }
 
 

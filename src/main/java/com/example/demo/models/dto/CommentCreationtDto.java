@@ -1,16 +1,18 @@
 package com.example.demo.models.dto;
 
+import com.example.demo.models.enums.ModelEnum;
+
 public class CommentCreationtDto {
     private String username;
     private String message;
-    private String model;
+    private ModelEnum model;
     public CommentCreationtDto() {
     }
 
-    public CommentCreationtDto(String username, String message, String model) {
+    public CommentCreationtDto(String username, String message, ModelEnum model) {
         this.username = username;
         this.message = message;
-        this.model=model;
+        this.model = model;
     }
 
     public String getUsername() {
@@ -29,11 +31,11 @@ public class CommentCreationtDto {
         this.message = message;
     }
 
-    public String getModel() {
+    public ModelEnum getModel() {
         return model;
     }
 
-    public void setModel(String model) {
+    public void setModel(ModelEnum model) {
         this.model = model;
     }
 }

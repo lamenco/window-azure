@@ -1,9 +1,8 @@
 package com.example.demo.models.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import com.example.demo.models.enums.ModelEnum;
+
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -12,7 +11,7 @@ public class Window extends BaseEntity{
 
     private double height;
     private double width;
-    private String model;
+    private Model model;
     private Colors color;
     private Chambers chamber;
     private BigDecimal price;
@@ -21,20 +20,31 @@ public class Window extends BaseEntity{
     public Window() {
     }
 
+    public Window(double height, double width, Model model, Colors color, Chambers chamber, User user) {
+        this.height = height;
+        this.width = width;
+        this.model = model;
+        this.color = color;
+        this.chamber = chamber;
+        this.user = user;
+    }
+
     public double getHeight() {
         return height;
     }
 
-    public void setHeight(double height) {
+    public Window setHeight(double height) {
         this.height = height;
+        return this;
     }
 
     public double getWidth() {
         return width;
     }
 
-    public void setWidth(double width) {
+    public Window setWidth(double width) {
         this.width = width;
+        return this;
     }
 
     @Column(nullable = false)
@@ -42,32 +52,36 @@ public class Window extends BaseEntity{
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public Window setPrice(BigDecimal price) {
         this.price = price;
+        return this;
     }
     @ManyToOne
     public Colors getColor() {
         return color;
     }
 
-    public void setColor(Colors color) {
+    public Window setColor(Colors color) {
         this.color = color;
+        return this;
     }
     @ManyToOne
     public Chambers getChamber() {
         return chamber;
     }
 
-    public void setChamber(Chambers chamber) {
+    public Window setChamber(Chambers chamber) {
         this.chamber = chamber;
+        return this;
     }
-
-    public String getModel() {
+    @ManyToOne
+    public Model getModel() {
         return model;
     }
 
-    public void setModel(String model) {
+    public Window setModel(Model model) {
         this.model = model;
+        return this;
     }
 
     @ManyToOne
@@ -75,7 +89,8 @@ public class Window extends BaseEntity{
         return user;
     }
 
-    public void setUser(User user) {
+    public Window setUser(User user) {
         this.user = user;
+        return this;
     }
 }

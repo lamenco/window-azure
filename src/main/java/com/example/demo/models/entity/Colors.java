@@ -11,6 +11,11 @@ public class Colors extends BaseEntity{
 
     public Colors() {
     }
+
+    public Colors(ColorsEnum color) {
+        this.color = color;
+    }
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     public ColorsEnum getColor() {

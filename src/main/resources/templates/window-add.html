@@ -27,16 +27,7 @@
             <small th:if="${#fields.hasErrors('width')}" th:errors="*{width}"
                    class="text-danger">Incorrect width!</small>
             <br>
-            <label>Model:</label><br>
-            <select th:errorclass="bg-danger"
-                    name="model" class="selector">
-                <option   value="">- Select chamber type -</option>
-                <option th:each="m : ${T(com.example.demo.models.enums.ModelEnum).values()}"
-                        th:value="${m}" th:text="${m}"
-                        th:selected="${m} == *{model}">Chamber Type
-                </option>
 
-            </select><br>
             <label>Chamber:</label><br>
             <select th:errorclass="bg-danger"
                     name="chamber" class="selector">
@@ -63,7 +54,18 @@
             <small th:if="${#fields.hasErrors('color')}" th:errors="*{color}"
                    class="text-danger">Incorrect color!</small>
             <br>
-
+            <label>Model:</label><br>
+            <select th:errorclass="bg-danger"
+                    name="model" class="selector">
+                <option   value="">- Select chamber type -</option>
+                <option th:each="m : ${T(com.example.demo.models.enums.ModelEnum).values()}"
+                        th:value="${m}" th:text="${m}"
+                        th:selected="${m} == *{model}">Chamber Type
+                </option>
+                <small th:if="${#fields.hasErrors('model')}" th:errors="*{model}"
+                       class="text-danger">Incorrect model!</small>
+                <br>
+            </select><br>
 
             <button type="submit" class="submit-btn" value="Register">Add</button>
         </form>

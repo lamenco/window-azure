@@ -1,8 +1,10 @@
 package com.example.demo.models.dto;
 
 //import com.example.demo.models.validation.UniqueUserEmail;
-import javax.validation.constraints.Size;
+import com.example.demo.validation.UniqueEmail;
+import com.example.demo.validation.UniqueUsername;
 
+import javax.validation.constraints.Size;
 
 
 public class UserRegisterDto {
@@ -16,7 +18,7 @@ public class UserRegisterDto {
     }
 
     @Size(min = 3, message = "Please use more then 3 symbols")
-
+    @UniqueUsername
     public String getUsername() {
         return username;
     }
@@ -33,6 +35,7 @@ public class UserRegisterDto {
         this.fullName = fullName;
     }
     @Size(min = 3, message = "Please use more then 3 symbols")
+    @UniqueEmail
     public String getEmail() {
         return email;
     }
